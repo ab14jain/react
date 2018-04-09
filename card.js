@@ -61,13 +61,17 @@ class App extends React.Component {
   }
   
   addCard = (cardInfo) => {
-  	console.log(cardInfo);
+  	//console.log(cardInfo);
     //console.log(this.state.cards.concat(cardInfo));
     this.setState(prevState => 
-    	{cards: prevState.cards.concat(cardInfo)}
+    	({   	
+        //cards: Array.prototype.push.apply(prevState.cards, cardInfo)
+        cards: prevState.cards.concat(cardInfo)
+      })
     )
-    
+    //console.log(this.state.cards);
   }
+  
   
 	render(){
   	return(
